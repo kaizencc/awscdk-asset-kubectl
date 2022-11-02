@@ -21,6 +21,11 @@ bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) a
 
 Usage:
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ce5b93b (Update README.md)
 ```ts
 // KubectlLayer bundles the 'kubectl' and 'helm' command lines
 import { KubectlV22Layer } from '@aws-cdk/lambda-layer-kubectl-v22';
