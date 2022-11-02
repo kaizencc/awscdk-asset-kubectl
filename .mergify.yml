@@ -41,11 +41,11 @@ pull_request_rules:
         assignees:
           - "{{ author }}"
   - name: backport patches to kubectl-v21+ branch
-      conditions:
-        - label=backport-to-kubectl-v21+
-      actions:
-        backport:
-          regexes:
-            - kubectl-v(?!20)[\d]*\/main
-          assignees:
-            - "{{ author }}"
+    conditions:
+      - label=backport-to-kubectl-v21+
+    actions:
+      backport:
+        regexes:
+          - kubectl-v(?!20)[\d]*\/main
+        assignees:
+          - "{{ author }}"
