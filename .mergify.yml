@@ -31,21 +31,11 @@ pull_request_rules:
       - status-success=package-python
       - status-success=package-dotnet
       - status-success=package-go
-  - name: backport patches to kubectl-v20+ branch
-    conditions:
-      - label=backport-to-kubectl-v20+
-    actions:
-      backport:
-        regexes:
-          - kubectl-v[\d]*\/main
-        assignees:
-          - "{{ author }}"
-  - name: backport patches to kubectl-v21+ branch
+  - name: backport patches to kubectl-v21+ branches
     conditions:
       - label=backport-to-kubectl-v21+
+      - base=kubectl-v24/main
     actions:
       backport:
         regexes:
-          - kubectl-v(?!20)[\d]*\/main
-        assignees:
-          - "{{ author }}"
+          - kubectl-v(?!20|24)[\d]*\/main
